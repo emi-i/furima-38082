@@ -25,18 +25,23 @@
 |--------------------|-------------|--------------------------------|
 | name               | string      | null: false                    |
 | content            | text        | null: false                    |
-| category           | string      | null: false                    |
-| status             | string      | null: false                    |
-| defrayment         | string      | null: false                    |
-| area               | string      | null: false                    |
-| ship_date          | string      | null: false                    |
+| category_id        | integer     | null: false                    |
+| status_id          | integer     | null: false                    |
+| defrayment_id      | integer     | null: false                    |
+| prefecture_id      | integer     | null: false                    |
+| ship_date_id       | integer     | null: false                    |
 | price              | integer     | null: false                    |
 | user               | references  | null: false, foreign_key: true |
 
 
 ### Association
-- belongs-to :user
+- belongs_to :user
 - has_one :purchase
+- belongs_to :category
+- belongs_to :status
+- belongs_to :defrayment
+- belongs_to :prefecture
+- belongs_to :ship_date
 
 
 
@@ -58,13 +63,17 @@
 
 | Column             | Type        | Options                        |
 |--------------------|-------------|--------------------------------|
-| post_code          | integer     | null:false                     |
-| prefecture         | string      | null:false                     |
+| post_code          | string      | null:false                     |
+| prefecture_id      | integer     | null:false                     |
 | city               | string      | null:false                     |
 | block              | string      | null:false                     |
 | building           | string      |                                |
-| tel                | integer     | null:false                     |
+| tel                | string      | null:false                     |
 | purchase           | references  | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :purchase
+- belongs_to :prefecture
+
+
+
