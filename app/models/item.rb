@@ -6,5 +6,7 @@ class Item < ApplicationRecord
   belongs_to :defrayment
   belongs_to :prefecture
   belongs_to :ship_date
+  belongs_to :user
+  has_one_attached :image
 
 end
