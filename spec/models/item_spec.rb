@@ -22,6 +22,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
       end
+      it 'contentが空では登録できない' do
+        @item.content = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Content can't be blank")
+      end
       it 'category_idが空では登録できない' do
         @item.category_id = 1
         @item.valid?
