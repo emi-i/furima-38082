@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :ship_date
   belongs_to :user
   has_one_attached :image
+  has_one :purchase
 
   validates :name, presence: true
   validates :content, presence: true
@@ -18,4 +19,5 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 },
                     format: { with: /\A[0-9]+\z/ }
   validates :image, presence: true
+
 end
