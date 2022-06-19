@@ -19,5 +19,4 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 },
                     format: { with: /\A[0-9]+\z/ }
   validates :image, presence: true
-
 end
