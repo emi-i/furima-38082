@@ -22,10 +22,12 @@
 
 .other-image {
   margin-right: 10px;
+  
 }
 
 .preview-other-image{
-  height: 250px;
-  width: 250px;
+  height: 20vh;
+  width: 25vw;
+  min-height: 500px;
   object-fit: contain;
 }
