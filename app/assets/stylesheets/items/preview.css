@@ -1,6 +1,10 @@
+.previews{
+  display: flex;
+}
+
 .preview-image{
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   object-fit: contain;
 }
 
@@ -9,4 +13,19 @@
   border: solid 1px;
   cursor: pointer;
   margin-bottom: 5px;
+}
+
+.other-images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.other-image {
+  margin-right: 10px;
+}
+
+.preview-other-image{
+  height: 250px;
+  width: 250px;
+  object-fit: contain;
 }
