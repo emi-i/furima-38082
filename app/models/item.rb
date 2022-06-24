@@ -19,4 +19,5 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 },
                     format: { with: /\A[0-9]+\z/ }
   validates :images, presence: true
+  validates :images, length: { minimum: 1, maximum: 5, message: "は１枚以上５枚以下にしてください" }
 end
