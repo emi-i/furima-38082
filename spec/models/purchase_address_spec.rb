@@ -27,17 +27,17 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'post_codeにハイフンがないと購入できない' do
         @purchase_address.post_code = '1111111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Post code はハイフンを入れて半角で入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Post code はハイフンを入れて半角で入力してください')
       end
       it 'post_codeが全角だと購入できない' do
         @purchase_address.post_code = '１１１１１１１'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Post code はハイフンを入れて半角で入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Post code はハイフンを入れて半角で入力してください')
       end
       it 'prefectureが空だと購入できない' do
         @purchase_address.prefecture_id = 1
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Prefecture を入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Prefecture を入力してください')
       end
       it 'cityが空だと購入できない' do
         @purchase_address.city = ''
@@ -57,22 +57,22 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'telが10桁より少ないと購入できない' do
         @purchase_address.tel = '1111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Tel は10桁〜11桁の半角文字で入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Tel は10桁〜11桁の半角文字で入力してください')
       end
       it 'telが11桁より多いと購入できない' do
         @purchase_address.tel = '111111111111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Tel は10桁〜11桁の半角文字で入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Tel は10桁〜11桁の半角文字で入力してください')
       end
       it 'telが全角だと購入できない' do
         @purchase_address.tel = '１２３４５６７８９０'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Tel は10桁〜11桁の半角文字で入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Tel は10桁〜11桁の半角文字で入力してください')
       end
       it 'telにハイフンがあると購入できない' do
         @purchase_address.tel = '111-1111-1111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Tel は10桁〜11桁の半角文字で入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Tel は10桁〜11桁の半角文字で入力してください')
       end
       it 'userが紐づいていないと購入できない' do
         @purchase_address.user_id = nil
@@ -87,7 +87,7 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'tokenが空では登録できないこと' do
         @purchase_address.token = nil
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Token を正しく入力してください")
+        expect(@purchase_address.errors.full_messages).to include('Token を正しく入力してください')
       end
     end
   end
