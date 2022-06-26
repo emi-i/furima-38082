@@ -12,10 +12,10 @@ RSpec.describe Item, type: :model do
       end
     end
     context '商品登録できない場合' do
-      it 'imageが空では場合登録できない' do
-        @item.image = nil
+      it 'imagesが空では場合登録できない' do
+        @item.images = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image can't be blank")
+        expect(@item.errors.full_messages).to include("Images can't be blank")
       end
       it 'nameが空では登録できない' do
         @item.name = ''
@@ -30,27 +30,27 @@ RSpec.describe Item, type: :model do
       it 'category_idが空では登録できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include('Category を入力してください')
       end
       it 'status_idが空では登録できない' do
         @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status can't be blank")
+        expect(@item.errors.full_messages).to include('Status を入力してください')
       end
       it 'defrayment_idが空では登録できない' do
         @item.defrayment_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Defrayment can't be blank")
+        expect(@item.errors.full_messages).to include('Defrayment を入力してください')
       end
       it 'prefecture_idが空では登録できない' do
         @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include('Prefecture を入力してください')
       end
       it 'ship_date_idが空では登録できない' do
         @item.ship_date_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ship date can't be blank")
+        expect(@item.errors.full_messages).to include('Ship date を入力してください')
       end
       it 'priceが空では登録できない' do
         @item.price = ''
