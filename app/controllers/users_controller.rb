@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   def show
+    @user = User.find(current_user.id)
+
   end
 
   def update
-    if current_user.update(user_params) # 更新出来たかを条件分岐する
+    @user = User.find(current_user.id)
+    binding.pry
+    if @user.update(user_params) # 更新出来たかを条件分岐する
       redirect_to root_path # 更新できたらrootパスへ
     else
       redirect_to action: "show" # 失敗すれば再度マイページへ
